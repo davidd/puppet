@@ -30,6 +30,13 @@ se fdm=marker
 
 if (has("win32") || has("win16") || has("win64") || has("win32unix") || has("win95")) 
   behave mswin
+  " CTRL-A is Select all
+  "noremap <C-A> gggH<C-O>G
+  "inoremap <C-A> <C-O>gg<C-O>gH<C-O>G
+  "cnoremap <C-A> <C-C>gggH<C-O>G
+  "onoremap <C-A> <C-C>gggH<C-O>G
+  "snoremap <C-A> <C-C>gggH<C-O>G
+  "xnoremap <C-A> <C-C>ggVG
 endif
 
 se hidden " Allow go between buffers without writing changes 
