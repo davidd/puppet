@@ -40,16 +40,20 @@ if (has("win32") || has("win16") || has("win64") || has("win32unix") || has("win
 endif
 
 se hidden " Allow go between buffers without writing changes 
-" Use SHIFT-CTRL-p/n to go between buffers
-map <M-.> :bn<CR>
-map <M-,> :bp<CR>
-map! <M-.> <ESC>:bn<CR>
-map! <M-,> <ESC>:bp<CR>
+" Use <CTRL-b>-p/n to go between buffers
+map <C-b>n :bn<CR>
+map <C-b>p :bp<CR>
+map! <C-b>n <ESC>:bn<CR>
+map! <C-b>p <ESC>:bp<CR>
+
+map <C-b><C-b> <ESC>\be
+map! <C-b><C-b> <ESC>\be
+
 "" CTRL-Tab for same
-map <C-Tab> <M-n>
-map <C-S-Tab> <M-p>
-map! <C-Tab> <M-n>
-map! <C-S-Tab> <M-p>
+map <C-Tab> <C-b>n
+map <C-S-Tab> <C-b>p
+map! <C-Tab> <C-b>n
+map! <C-S-Tab> <C-b>p
 " F12 or CTRL-S to save all changes.
 " Always leaves you in normal mode.
 map <F12> <ESC><ESC>:wa<CR>

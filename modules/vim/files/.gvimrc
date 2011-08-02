@@ -1,6 +1,6 @@
 "*** font ***
 " Highlight search matches, and set incremental searching on ***
-:se guifont=Courier:h20
+:se guifont=Courier:h18
 :winpos 50 50
 :se lines=32 columns=100
 "*** No toolbar ***
