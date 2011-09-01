@@ -43,7 +43,8 @@
 #node n2 inherits base {
 #}
 
-
+require sudo
+require utils
 require vim::core
 require users::core
 

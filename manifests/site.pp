@@ -1,5 +1,7 @@
-notify { "site_msg1":
-  message => "NOTIFY - site.pp",
+notify { 'site_msg1':
+  message => 'manifests/site.pp',
 }
 
-import "nodes"
+Exec { path => '/usr/bin:/usr/sbin:/bin:/sbin' }
+
+import 'nodes'

@@ -1,6 +1,11 @@
+
 class vim::core {
-  package { 'vim': ensure => 'latest' }
-  notify { 'zxc':
-    message => 'zxc',
+
+  notify { 'vim_msg1':
+    message => 'modules/vim/manifests/core.pp',
   }
+
+  package { 'vim': ensure => 'latest' }
+  
 }
+
