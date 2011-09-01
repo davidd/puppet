@@ -4,7 +4,7 @@
 class utils {
   
   notify { 'utils_msg1':
-    message => 'modules/screen/manifests/init.pp',
+    message => 'modules/utils/manifests/init.pp',
   }
 
   package { 'unzip': ensure => 'latest' }

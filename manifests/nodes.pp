@@ -43,12 +43,44 @@
 #node n2 inherits base {
 #}
 
-require sudo
-require utils
-require vim::core
-require users::core
+#require utils
+#require vim::core
+#require users::core
 
-notify { 'msg':
-  require => Notify['site_msg1'],
-  message => "This message gets logged",
+#notify { 'nodes_msg1':
+#  require => Notify['site_msg1'],
+#  message => 'manifests/nodes.pp',
+#}
+
+node base {
+  require utils
+  require vim::core
+  require users::core
+}
+
+node puppetclient inherits base {
+#node puppetclient {
+  #require => Notify['nodes_msg1'],
+  #notify { 'zxc3':
+  #  message => 'zxc puppetclient',
+  #}
+  #notify { 'zxc3xx':
+  #  message => 'zxc puppetclient',
+  #}
+}
+
+node zz inherits base {
+#  #require => Notify['nodes_msg1'],
+  notify { 'zz':
+    message => 'zz',
+  }
+#  
+#  notify { 'zz23':
+#    message => 'zz2',
+#  }
+#  
+#  file { '/home/davidd/z123x':
+#    #require => User['davidd'],
+#    ensure  => 'present',
+#  }
 }
