@@ -53,20 +53,24 @@
 #}
 
 node base {
+  # This is my littel scheme to enable you to go 
+  # puppet apply /etc/puppet/modules/nodes/manifests/base.pp -v --test
   require utils
   require vim::core
   require users::core
 }
 
-node puppetclient inherits base {
+node puppetclient, puppetmaster inherits base {
 #node puppetclient {
   #require => Notify['nodes_msg1'],
-  #notify { 'zxc3':
-  #  message => 'zxc puppetclient',
-  #}
+  notify { 'zxc3':
+    message => 'zxc puppetclient / master',
+  }
   #notify { 'zxc3xx':
   #  message => 'zxc puppetclient',
   #}
+  #require utils
+  #import 'basex'
 }
 
 node zz inherits base {
@@ -74,6 +78,7 @@ node zz inherits base {
   notify { 'zz':
     message => 'zz',
   }
+
 #  
 #  notify { 'zz23':
 #    message => 'zz2',
