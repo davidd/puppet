@@ -53,8 +53,7 @@
 #}
 
 node base {
-  # This is my littel scheme to enable you to go 
-  # puppet apply /etc/puppet/modules/nodes/manifests/base.pp -v --test
+  require base::python
   require utils
   require vim::core
   require users::core
